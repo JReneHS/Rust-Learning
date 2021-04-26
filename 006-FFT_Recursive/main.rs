@@ -1,5 +1,3 @@
-pub const PI: f64 = 3.14159265358979323846264338327950288f64;
-
 struct Complx {
     rel: f64,
     com: f64,
@@ -29,22 +27,26 @@ impl Complx {
     }
 }
 
-fn recursiveFFT(a: &Vec<f64>) -> Vec<Complx> {
-    let n = a.len();
-    let n2 = n / 2;
-
-    if n == 1 {
-        let ss: Complx = Complx::new(a[0], 0.0);
-        let mut aa: Vec<Complx> = Vec::new();
-        aa.push(ss);
-        aa
-    } else {
-        //Continuar...
+fn rFFT(x: &Vec<Complx>, inv: i32) {
+    let n: usize = x.len();
+    let mut i: usize = 1;
+    let mut j: usize = 0;
+    let mut k: usize = n >> 1;
+    while i < n - 1 {
+        j ^= k;
+        while j < k {
+            if i < j {
+                //continuar con el swap
+            }
+            k >>= 1;
+            j ^= k;
+        }
+        i += 1;
     }
 }
 
 fn main() {
-    let s: Complx = Complx::new(5.1, 10.2);
-    let b: Complx = Complx::new(2.1, 4.6);
-    let mul: Complx = s.multi(&b);
+    let inv: i32 = 10;
+    let mut arr: Vec<Complx>;
+    rFFT(&arr, inv);
 }
