@@ -80,7 +80,7 @@ fn main() {
         // el crate "rand" es una libreria crate que contiene codigo diseñado para ser usado en otros
         // programas.
 
-        // Todos los crate se tienen que descargar de internet
+        // Todas los crate se tienen que descargar de internet
         // Para agregarlos al proyecto se tiene que modificar el archivo Cargo.toml
         // debajo de la seccion de [dependencies] se agrega la linea para este caso
         //      rand = "0.5.5"
@@ -113,7 +113,7 @@ fn main() {
             }
         };
 
-        // Trim Remueve cualquier espacio o caracter vacio (\n) tando prefix como sufix.
+        // Trim Remueve cualquier espacio o caracter vacio (\n) tanto prefix como sufix.
         // Parse busca cualquier tipo de numero y hace la conversion (esste caso u32)
         // En este caso se usa un match en vez del catch de exepciones "expect()"
         // Pasamos de fallar en un error a TRATAR y MANEJAR un error
